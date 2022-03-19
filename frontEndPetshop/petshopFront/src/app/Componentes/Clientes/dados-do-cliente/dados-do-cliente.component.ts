@@ -184,6 +184,7 @@ export class DadosDoClienteComponent implements OnInit {
       })
   }
 
+  //Função utilizada para popular os campos no html com os dados do cliente que foram puxados do banco
   mostrar_dados(){
     console.log('Mostrar dados')
     this.idCliente = this.dados_cliente[0].idCliente
