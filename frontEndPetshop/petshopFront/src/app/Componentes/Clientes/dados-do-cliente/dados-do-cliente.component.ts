@@ -91,6 +91,8 @@ export class DadosDoClienteComponent implements OnInit {
   // Busca todos os dados do cliente com base no ID fornecido
   buscarUmCliente(){
 
+    //Esta função é chamada no momento que o usuário clica no campo Nome do Cliente
+    //Limpa todos os campos caso já tenha sido feito uma busca anterior
     this.idCliente ='teste'
     this.nomeCliente =''
     this.statusCliente =''
@@ -117,13 +119,11 @@ export class DadosDoClienteComponent implements OnInit {
     this.redeSocialPet =''
     this.observacaoPet =''
 
-
-
-
+      //Traz todos os dados referentes ao cliente que estão no banco
       this.clienteService.buscarClienteId(this.clienteEscolhido.id).subscribe(resultado=>{
         console.log('Buscar um cliente')
-          resultado.forEach((index:any[]) => {
 
+        resultado.forEach((index:any[]) => {
             let item: any ={
                 idCliente:'',
                 nomeCliente:'',
