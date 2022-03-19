@@ -1,9 +1,7 @@
-import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PetService } from 'src/app/Servicos/PetService';
 import { ClienteService } from 'src/app/Servicos/ClienteService';
-import { NgForOf } from '@angular/common';
 
 
 @Component({
@@ -40,7 +38,7 @@ export class DadosDoClienteComponent implements OnInit {
   observacaoPet:String =''
   menu:any = []
   dados_cliente:any = []
-  id_cliente:any='1'
+  id_cliente:any
   itens_cliente:any = []
   lista:any=[]
   nomePet:any
@@ -54,17 +52,14 @@ export class DadosDoClienteComponent implements OnInit {
 
   ngOnInit(): void {
     this.listarClientes()
-    //this.buscarUmCliente()
   }
 
   // Lista os clientes e seus pets para efetuar a busca no banco de dados
   listarClientes(){
     this.clienteService.listarClientes().subscribe(resultado=>{
 
-      console.log('Caso 1:' , resultado)
       this.lista = resultado
       resultado.forEach((select:any[]) => {
-
         console.log('Dentro do foreach')
         let item: any ={
           id:'',
@@ -81,7 +76,7 @@ export class DadosDoClienteComponent implements OnInit {
   }
 
   // Acionado no onChange do campo Nome do Cliente
-  // Esta função usca o nome do pet com base no id docliente escolhido
+  // Esta função usca o nome do pet com base no id do cliente escolhido
   // Mostra o nome do pet no campo abaixo do cliente
   buscarNomePet(){
 
@@ -94,15 +89,13 @@ export class DadosDoClienteComponent implements OnInit {
     })
   }
 
-
   // Busca todos os dados do cliente com base no ID fornecido
   buscarUmCliente(){
 
     //Esta função é chamada no momento que o usuário clica no campo Nome do Cliente
     //Traz todos os dados referentes ao cliente que estão no banco
       this.clienteService.buscarClienteId(this.clienteEscolhido.id).subscribe(resultado=>{
-        console.log('Buscar um cliente, id: ',this.clienteEscolhido.id)
-        console.log('Resultado:',resultado)
+        this.cliente = resultado
 
         resultado.forEach((index:any[]) => {
             let item: any ={
