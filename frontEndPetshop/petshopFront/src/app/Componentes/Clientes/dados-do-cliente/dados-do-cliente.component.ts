@@ -80,8 +80,14 @@ export class DadosDoClienteComponent implements OnInit {
     })
   }
 
-  // Busca o nome do pet com base no cliente escolhido, afim de confirmar se é este o cliente procurado
+  // Acionado no onChange do campo Nome do Cliente
+  // Esta função usca o nome do pet com base no id docliente escolhido
+  // Mostra o nome do pet no campo abaixo do cliente
   buscarNomePet(){
+
+    //Limpa os campos do formulário caso tenha dados da última busca
+    this.limpar_campos()
+
     console.log('Nome do id:',this.clienteEscolhido.id)
     this.petService.buscarNomePet(this.clienteEscolhido.id).subscribe(resultado=>{
        this.nomePet = resultado
@@ -93,36 +99,10 @@ export class DadosDoClienteComponent implements OnInit {
   buscarUmCliente(){
 
     //Esta função é chamada no momento que o usuário clica no campo Nome do Cliente
-    //Limpa todos os campos caso já tenha sido feito uma busca anterior
-    this.idCliente ='teste'
-    this.nomeCliente =''
-    this.statusCliente =''
-    this.nascCliente =''
-    this.observacaoCliente =''
-    this.genero =''
-    this.telefone =''
-    this.email =''
-    this.redeSocialCliente =''
-    this.estado =''
-    this.cidade =''
-    this.bairro =''
-    this.endereco =''
-    this.complemento =''
-    this.cep =''
-    this.nomeDoPet =''
-    this.tipoPet =''
-    this.raca =''
-    this.porte =''
-    this.nascPet =''
-    this.petCastrado =''
-    this.sexoPet =''
-    this.petVacinado =''
-    this.redeSocialPet =''
-    this.observacaoPet =''
-
-      //Traz todos os dados referentes ao cliente que estão no banco
+    //Traz todos os dados referentes ao cliente que estão no banco
       this.clienteService.buscarClienteId(this.clienteEscolhido.id).subscribe(resultado=>{
-        console.log('Buscar um cliente')
+        console.log('Buscar um cliente, id: ',this.clienteEscolhido.id)
+        console.log('Resultado:',resultado)
 
         resultado.forEach((index:any[]) => {
             let item: any ={
@@ -153,66 +133,63 @@ export class DadosDoClienteComponent implements OnInit {
                 observacaoPet:'',
                 } //fim let item
 
-                item.idCliente = index[0]
-                item.nomeCliente = index[1]
-                item.statusCliente = index[2]
-                item.nascCliente = index[3]
-                item.observacaoCliente = index[4]
-                item.genero = index[5]
-                item.telefone = index[6]
-                item.email = index[7]
-                item.redeSocialCliente = index[8]
-                item.estado = index[9]
-                item.cidade = index[10]
-                item.bairro = index[11]
-                item.endereco = index[12]
-                item.complemento = index[13]
-                item.cep = index[14]
-                item.nomePet = index[15]
-                item.tipoPet = index[16]
-                item.raca = index[17]
-                item.porte = index[18]
-                item.nascPet = index[19]
-                item.petCastrado = index[20]
-                item.sexoPet = index[21]
-                item.petVacinado = index[22]
-                item.redeSocialPet = index[23]
-                item.observacaoPet = index[24]
-                this.dados_cliente.push(item)
+                this.idCliente = index[0]
+                this.nomeCliente = index[1]
+                this.statusCliente = index[2]
+                this.nascCliente = index[3]
+                this.observacaoCliente = index[4]
+                this.genero = index[5]
+                this.telefone = index[6]
+                this.email = index[7]
+                this.redeSocialCliente = index[8]
+                this.estado = index[9]
+                this.cidade = index[10]
+                this.bairro = index[11]
+                this.endereco = index[12]
+                this.complemento = index[13]
+                this.cep = index[14]
+                this.nomeDoPet = index[15]
+                this.tipoPet = index[16]
+                this.raca = index[17]
+                this.porte = index[18]
+                this.nascPet = index[19]
+                this.petCastrado = index[20]
+                this.sexoPet = index[21]
+                this.petVacinado = index[22]
+                this.redeSocialPet = index[23]
+                this.observacaoPet = index[24]
 
           }) //fim forEach
 
       })
   }
 
-  //Utilizada no botão Buscar
-  //Função utilizada para popular os campos no html com os dados do cliente que foram puxados do banco
-  mostrar_dados(){
-    console.log('Mostrar dados')
-    this.idCliente = this.dados_cliente[0].idCliente
-    this.nomeCliente = this.dados_cliente[0].nomeCliente
-    this.statusCliente = this.dados_cliente[0].statusCliente
-    this.nascCliente = this.dados_cliente[0].nascCliente
-    this.observacaoCliente = this.dados_cliente[0].observacaoCliente
-    this.genero = this.dados_cliente[0].genero
-    this.telefone = this.dados_cliente[0].telefone
-    this.email = this.dados_cliente[0].email
-    this.redeSocialCliente = this.dados_cliente[0].redeSocialCliente
-    this.estado = this.dados_cliente[0].estado
-    this.cidade = this.dados_cliente[0].cidade
-    this.bairro = this.dados_cliente[0].bairro
-    this.endereco = this.dados_cliente[0].endereco
-    this.complemento = this.dados_cliente[0].complemento
-    this.cep = this.dados_cliente[0].cep
-    this.nomePet = this.dados_cliente[0].nomePet
-    this.tipoPet = this.dados_cliente[0].tipoPet
-    this.raca = this.dados_cliente[0].raca
-    this.porte = this.dados_cliente[0].porte
-    this.nascPet = this.dados_cliente[0].nascPet
-    this.petCastrado = this.dados_cliente[0].petCadastrado
-    this.sexoPet = this.dados_cliente[0].sexoPet
-    this.petVacinado = this.dados_cliente[0].petVacinado
-    this.redeSocialPet = this.dados_cliente[0].redeSocialPet
-    this.observacaoPet = this.dados_cliente[0].observacaoPet
+  limpar_campos(){
+       //Limpa todos os campos caso já tenha sido feito uma busca anterior
+       this.idCliente = ''
+       this.nomeCliente =''
+       this.statusCliente =''
+       this.nascCliente =''
+       this.observacaoCliente =''
+       this.genero =''
+       this.telefone =''
+       this.email =''
+       this.redeSocialCliente =''
+       this.estado =''
+       this.cidade =''
+       this.bairro =''
+       this.endereco =''
+       this.complemento =''
+       this.cep =''
+       this.nomeDoPet =''
+       this.tipoPet =''
+       this.raca =''
+       this.porte =''
+       this.nascPet =''
+       this.petCastrado =''
+       this.sexoPet =''
+       this.petVacinado =''
+       this.redeSocialPet =''
+       this.observacaoPet =''
   }
 }

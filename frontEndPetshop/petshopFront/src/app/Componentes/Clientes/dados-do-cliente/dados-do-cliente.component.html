@@ -9,7 +9,7 @@
 
             <!-- <select type="text" class="form-control form-control-sm mb-2" id="buscaCliente" (ngModelChange)="mostrarPet()"> -->
               <!-- <select  [(ngModel)]="clienteEscolhido" name="clienteEscolhido" (ngModelChange)="mostrarPet()"> -->
-              <select  class="form-control form-control-sm mb-2" [(ngModel)]="clienteEscolhido" name="clienteEscolhido" (ngModelChange)="buscarNomePet()" (ngModelChange)="buscarUmCliente()">
+              <select  class="form-control form-control-sm mb-2" [(ngModel)]="clienteEscolhido" name="clienteEscolhido" (ngModelChange)="buscarNomePet()">
               <option *ngFor="let clientes of menu"  [ngValue]="clientes">
                {{clientes.nomeCliente}}
               </option>
@@ -25,7 +25,7 @@
 
           <div class="col-3">
             <label class="fonteLabel" for="botaoBuscar"></label>
-            <button type="button" class="form-control btn-sm mb-2 btn-primary" id="buscarCep" (click)="mostrar_dados()" >Buscar</button>
+            <button type="button" class="form-control btn-sm mb-2 btn-primary" id="botaoBuscar" (click)="buscarUmCliente()" >Buscar</button>
           </div>
         </div>
         <div class="row contorno mt-3">
