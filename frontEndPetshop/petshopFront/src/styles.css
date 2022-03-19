@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+
+.mobile{
+  display: block;
+}
+
+.desktop{
+  display: none;
+}
+
+.contorno{
+  border: 1px solid rgb(214, 209, 209);
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.botao{
+  text-align: center;
+}
+
+.fonteLabel{
+  font-size: 12px;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 2px;
+
+}
+
+
+@media (min-width: 576px) {
+  .mobile{
+    display: none;
+  }
+
+  .desktop{
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

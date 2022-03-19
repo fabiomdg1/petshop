@@ -1,0 +1,337 @@
+<div class="container">
+  <form>
+    <div class="form-group">
+
+      <div class="mobile">
+        <div class="row contorno mt-3">
+          <div class="col-9">
+            <label class="fonteLabel" for="buscaCliente">Nome do Cliente</label>
+
+            <!-- <select type="text" class="form-control form-control-sm mb-2" id="buscaCliente" (ngModelChange)="mostrarPet()"> -->
+              <!-- <select  [(ngModel)]="clienteEscolhido" name="clienteEscolhido" (ngModelChange)="mostrarPet()"> -->
+              <select  class="form-control form-control-sm mb-2" [(ngModel)]="clienteEscolhido" name="clienteEscolhido" (ngModelChange)="buscarNomePet()" (ngModelChange)="buscarUmCliente()">
+              <option *ngFor="let clientes of menu"  [ngValue]="clientes">
+               {{clientes.nomeCliente}}
+              </option>
+            </select>
+          </div>
+
+
+
+          <div class="col-9">
+            <label class="fonteLabel" for="nomeCliente">Nome do Pet</label>
+            <input name="nomePet" [(ngModel)]="nomePet" type="text" class="form-control form-control-sm mb-2" id="nomeCliente" readonly>
+          </div>
+
+          <div class="col-3">
+            <label class="fonteLabel" for="botaoBuscar"></label>
+            <button type="button" class="form-control btn-sm mb-2 btn-primary" id="buscarCep" (click)="mostrar_dados()" >Buscar</button>
+          </div>
+        </div>
+        <div class="row contorno mt-3">
+
+          <div class="col-9">
+              <label class="fonteLabel" for="nomeCliente">Nome do Cliente</label>
+              <input type="text" [(ngModel)]="nomeCliente" name="nomeCliente" class="form-control form-control-sm mb-2" readonly>
+          </div>
+
+          <div class="col-3">
+            <label class="fonteLabel" for="statusCliente">Status</label>
+            <input type="text" [(ngModel)]="statusCliente" name="statusCliente" class="form-control form-control-sm mb-2" id="statusCliente" readonly>
+          </div>
+
+          <div class="col-5">
+            <label class="fonteLabel" for="telefoneCliente">Telefone</label>
+            <input type="text" [(ngModel)]="telefone" name="telefone" class="form-control form-control-sm mb-2" id="telefoneCliente" readonly>
+          </div>
+
+          <div class="col-7">
+            <label class="fonteLabel" for="emailCliente">Email</label>
+            <input type="text" class="form-control form-control-sm mb-2" id="emailCliente" readonly>
+          </div>
+
+          <div class="col-8">
+            <label class="fonteLabel" for="enderecoCliente">Endereço</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="enderecoCliente" readonly>
+          </div>
+
+          <div class="col-4">
+            <label class="fonteLabel" for="enderecoComplemento">Complemento</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="enderecoComplemento" readonly>
+          </div>
+
+          <div class="col-12">
+            <label class="fonteLabel" for="redeSocialCliente">Rede Social</label>
+            <input type="text" class="form-control form-control-sm mb-2" id="Cliente" readonly>
+          </div>
+
+          <div class="col-5">
+            <label class="fonteLabel" for="cepCliente">CEP</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="cepCliente" readonly>
+          </div>
+
+          <div class="col-7">
+            <label class="fonteLabel" for="statusCliente">Estado</label>
+            <input type="text" class="form-control form-control-sm mb-2" id="statusCliente" readonly>
+          </div>
+
+          <div class="col-5">
+            <label class="fonteLabel" for="cidadeCliente">Cidade</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="cidadeCliente" readonly>
+          </div>
+
+
+
+          <div class="col-7">
+            <label class="fonteLabel" for="bairroCliente">Bairro</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="bairroCliente" readonly>
+          </div>
+
+
+
+          <div class="col-5">
+            <label class="fonteLabel" for="generoCliente">Gênero</label>
+            <input type="text" class="form-control form-control-sm mb-2" id="generoCliente" readonly>
+          </div>
+
+          <div class="col-7">
+            <label class="fonteLabel" for="aniverCliente">Data de Aniversário</label>
+            <input type="date" class="form-control form-control-sm mb-2" id="aniverCliente" readonly>
+          </div>
+
+          <div class="12">
+            <label class="fonteLabel" for="exampleInputEmail1">Observação</label>
+            <textarea rows="5"  class="form-control form-control-sm mb-2" id="observacaoCliente" readonly></textarea>
+          </div>
+
+        </div>
+
+        <div class="row contorno mt-3">
+          <div class="col-8">
+            <label class="fonteLabel" for="nomePet">Nome do Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="nomePet" readonly>
+          </div>
+
+          <div class="col-4">
+            <label class="fonteLabel" for="exampleInputEmail1">Tipo do Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="tipoDoPet" readonly>
+          </div>
+
+          <div class="col-4">
+            <label class="fonteLabel" for="exampleInputEmail1">Raça do Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="racaPet" readonly>
+          </div>
+
+          <div class="col-4">
+            <label class="fonteLabel" for="exampleInputEmail1">Porte do Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="portePet" readonly>
+          </div>
+
+          <div class="col-4">
+            <label class="fonteLabel" for="exampleInputEmail1">Data Nasc. Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="nascimentoPet" readonly>
+          </div>
+
+          <div class="col-4">
+            <label class="fonteLabel" for="exampleInputEmail1">Castrado</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="castradoPet" readonly>
+          </div>
+
+          <div class="col-4">
+            <label class="fonteLabel" for="exampleInputEmail1">Sexo do Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="sexoPet" readonly>
+          </div>
+
+          <div class="col-4">
+            <label class="fonteLabel" for="exampleInputEmail1">Vacinação</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="vacinacaoPet" readonly>
+          </div>
+
+          <div class="12">
+            <label class="fonteLabel" for="exampleInputEmail1">Rede Social do Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="redeSocialPet" readonly>
+          </div>
+
+          <div class="12">
+            <label class="fonteLabel" for="exampleInputEmail1">Observação</label>
+            <textarea rows="5"  class="form-control form-control-sm mb-2" id="observacaoCliente" readonly></textarea>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- Div Desktop -->
+      <div class="desktop">
+        <div class="row contorno mt-3">
+          <div class="col-4">
+            <label class="fonteLabel" for="buscaCliente">Nome do Cliente</label>
+
+            <select type="text" class="form-control form-control-sm mb-2" id="buscaCliente">
+              <option *ngFor="let clientes of menu" [value]="clientes">
+                {{clientes.nomeCliente}}
+                <!-- {{clientes[1]}}-{{clientes[2]}} -->
+              </option>
+            </select>
+
+          </div>
+
+          <div class="col-4">
+            <label class="fonteLabel" for="nomeCliente">Nome do Pet</label>
+            <input type="text" class="form-control form-control-sm mb-2" id="nomeCliente" readonly>
+          </div>
+
+          <div class="col-2">
+            <label class="fonteLabel" for="botaoBuscar"></label>
+            <button type="button" class="form-control btn-sm mb-2 btn-primary" id="buscarCep">Buscar</button>
+          </div>
+        </div>
+        <div class="row contorno mt-3">
+          <div class="row">
+
+            <div class="col-6">
+              <div class="row">
+              <div class="col-8">
+                <label class="fonteLabel" for="nomeCliente">Nome do Cliente</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="nomeCliente" readonly>
+              </div>
+
+              <div class="col-4">
+                <label class="fonteLabel" for="telefoneCliente">Telefone</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="telefoneCliente" readonly>
+              </div>
+
+              <div class="col-4">
+                <label class="fonteLabel" for="statusCliente">Estado</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="statusCliente" readonly>
+              </div>
+
+              <div class="col-4">
+                <label class="fonteLabel" for="cidadeCliente">Cidade</label>
+                <input type="text"  class="form-control form-control-sm mb-2" id="cidadeCliente" readonly>
+              </div>
+
+              <div class="col-4">
+                <label class="fonteLabel" for="bairroCliente">Bairro</label>
+                <input type="text"  class="form-control form-control-sm mb-2" id="bairroCliente" readonly>
+              </div>
+
+              <div class="col-4">
+                <label class="fonteLabel" for="enderecoCliente">Endereço</label>
+                <input type="text"  class="form-control form-control-sm mb-2" id="enderecoCliente" readonly>
+              </div>
+
+              <div class="col-4">
+                <label class="fonteLabel" for="enderecoComplemento">Complemento</label>
+                <input type="text"  class="form-control form-control-sm mb-2" id="enderecoComplemento" readonly>
+              </div>
+
+              <div class="col-4">
+                <label class="fonteLabel" for="cepCliente">CEP</label>
+                <input type="text"  class="form-control form-control-sm mb-2" id="cepCliente" readonly>
+              </div>
+
+              <div class="col-5">
+                <label class="fonteLabel" for="emailCliente">Email</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="emailCliente" readonly>
+              </div>
+
+              <div class="col-7">
+                <label class="fonteLabel" for="redeSocialCliente">Rede Social</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="Cliente" readonly>
+              </div>
+            </div>
+            </div>
+
+            <div class="col-6">
+              <div class="row">
+              <div class="col-4">
+                <label class="fonteLabel" for="aniverCliente">Data de Aniversário</label>
+                <input type="date" class="form-control form-control-sm mb-2" id="aniverCliente" readonly>
+              </div>
+
+              <div class="col-4">
+                <label class="fonteLabel" for="generoCliente">Gênero</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="generoCliente" readonly>
+              </div>
+
+              <div class="col-4">
+                <label class="fonteLabel" for="statusCliente">Status</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="statusCliente" readonly>
+              </div>
+
+              <div class="12">
+                <label class="fonteLabel" for="exampleInputEmail1">Observação</label>
+                <textarea rows="7" class="form-control form-control-sm mb-2" id="observacaoCliente" readonly></textarea>
+              </div>
+            </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row contorno mt-3">
+          <div class="col-3">
+            <label class="fonteLabel" for="nomePet">Nome do Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="nomePet" readonly>
+          </div>
+
+          <div class="col-3">
+            <label class="fonteLabel" for="exampleInputEmail1">Tipo do Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="tipoDoPet" readonly>
+          </div>
+
+          <div class="col-3">
+            <label class="fonteLabel" for="exampleInputEmail1">Raça do Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="racaPet" readonly>
+          </div>
+
+          <div class="col-3">
+            <label class="fonteLabel" for="exampleInputEmail1">Porte do Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="portePet" readonly>
+          </div>
+
+          <div class="col-3">
+            <label class="fonteLabel" for="exampleInputEmail1">Data Nasc. Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="nascimentoPet" readonly>
+          </div>
+
+          <div class="col-3">
+            <label class="fonteLabel" for="exampleInputEmail1">Castrado</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="castradoPet" readonly>
+          </div>
+
+          <div class="col-3">
+            <label class="fonteLabel" for="exampleInputEmail1">Sexo do Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="sexoPet" readonly>
+          </div>
+
+          <div class="col-3">
+            <label class="fonteLabel" for="exampleInputEmail1">Vacinação</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="vacinacaoPet" readonly>
+          </div>
+
+          <div class="col-6">
+            <label class="fonteLabel" for="exampleInputEmail1">Rede Social do Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="redeSocialPet" readonly>
+          </div>
+
+          <div class="12">
+            <label class="fonteLabel" for="exampleInputEmail1">Observação sobre o Pet</label>
+            <input type="text"  class="form-control form-control-sm mb-2" id="observacaoPet" readonly>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row contorno botao">
+      <div class="col-6">
+        <button type="submit" class="btn btn-warning btn-sm">Editar</button>
+      </div>
+      <div class="col-6">
+        <button type="button" class="btn btn-danger btn-sm">Excluir</button>
+      </div>
+    </div>
+
+  </form>
+</div>
