@@ -1,19 +1,19 @@
 
-<h1 align="center">Tetty's Dog </h1>
-<h3 align="center">Site de Petshop</h3>
+<h1 align="center">Petshop </h1>
+<h3 align="center">Sistema de Gerenciamento para Petshop</h3>
 
 ---
 
 ## SoulCode Challenge 💡
 
-Desafio de HTML5, CSS3 proposto pela <strong>Soul Code</strong>, EDTECH brasileira com <i>inclusão social.</i>
+Desafio desenvolvido em Java proposto pela <strong>Soul Code</strong>, EDTECH brasileira com <i>inclusão social.</i>
 
 - <a href="https://soulcodeacademy.org/">SoulCode</a>
 
 ## Techs 🛠
 
-- HTML5
-- CSS3
+- Angular
+- Java
 
 ---
 
