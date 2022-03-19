@@ -47,61 +47,61 @@
 
           <div class="col-7">
             <label class="fonteLabel" for="emailCliente">Email</label>
-            <input type="text" class="form-control form-control-sm mb-2" id="emailCliente" readonly>
+            <input type="text" [(ngModel)]="email" name="email" class="form-control form-control-sm mb-2" id="emailCliente" readonly>
           </div>
 
           <div class="col-8">
             <label class="fonteLabel" for="enderecoCliente">Endereço</label>
-            <input type="text"  class="form-control form-control-sm mb-2" id="enderecoCliente" readonly>
+            <input type="text" [(ngModel)]="endereco" name="endereco" class="form-control form-control-sm mb-2" id="enderecoCliente" readonly>
           </div>
 
           <div class="col-4">
             <label class="fonteLabel" for="enderecoComplemento">Complemento</label>
-            <input type="text"  class="form-control form-control-sm mb-2" id="enderecoComplemento" readonly>
+            <input type="text" [(ngModel)]="complemento" name="complemento" class="form-control form-control-sm mb-2" id="enderecoComplemento" readonly>
           </div>
 
           <div class="col-12">
             <label class="fonteLabel" for="redeSocialCliente">Rede Social</label>
-            <input type="text" class="form-control form-control-sm mb-2" id="Cliente" readonly>
+            <input type="text" [(ngModel)]="redeSocialCliente" name="redeSocialCliente" class="form-control form-control-sm mb-2" id="Cliente" readonly>
           </div>
 
           <div class="col-5">
             <label class="fonteLabel" for="cepCliente">CEP</label>
-            <input type="text"  class="form-control form-control-sm mb-2" id="cepCliente" readonly>
+            <input type="text" [(ngModel)]="cep" name="cep"  class="form-control form-control-sm mb-2" id="cepCliente" readonly>
           </div>
 
           <div class="col-7">
             <label class="fonteLabel" for="statusCliente">Estado</label>
-            <input type="text" class="form-control form-control-sm mb-2" id="statusCliente" readonly>
+            <input type="text" [(ngModel)]="estado" name="estado" class="form-control form-control-sm mb-2" id="statusCliente" readonly>
           </div>
 
           <div class="col-5">
             <label class="fonteLabel" for="cidadeCliente">Cidade</label>
-            <input type="text"  class="form-control form-control-sm mb-2" id="cidadeCliente" readonly>
+            <input type="text" [(ngModel)]="cidade" name="cidade"  class="form-control form-control-sm mb-2" id="cidadeCliente" readonly>
           </div>
 
 
 
           <div class="col-7">
             <label class="fonteLabel" for="bairroCliente">Bairro</label>
-            <input type="text"  class="form-control form-control-sm mb-2" id="bairroCliente" readonly>
+            <input type="text" [(ngModel)]="bairro" name="bairro" class="form-control form-control-sm mb-2" id="bairroCliente" readonly>
           </div>
 
 
 
           <div class="col-5">
             <label class="fonteLabel" for="generoCliente">Gênero</label>
-            <input type="text" class="form-control form-control-sm mb-2" id="generoCliente" readonly>
+            <input type="text" [(ngModel)]="genero" name="genero" class="form-control form-control-sm mb-2" id="generoCliente" readonly>
           </div>
 
           <div class="col-7">
             <label class="fonteLabel" for="aniverCliente">Data de Aniversário</label>
-            <input type="date" class="form-control form-control-sm mb-2" id="aniverCliente" readonly>
+            <input type="date" [(ngModel)]="nascCliente" name="nascCliente" class="form-control form-control-sm mb-2" id="aniverCliente" readonly>
           </div>
 
           <div class="12">
             <label class="fonteLabel" for="exampleInputEmail1">Observação</label>
-            <textarea rows="5"  class="form-control form-control-sm mb-2" id="observacaoCliente" readonly></textarea>
+            <textarea rows="5" [(ngModel)]="observacaoCliente" name="observacaoCliente" class="form-control form-control-sm mb-2" id="observacaoCliente" readonly></textarea>
           </div>
 
         </div>
@@ -109,52 +109,52 @@
         <div class="row contorno mt-3">
           <div class="col-8">
             <label class="fonteLabel" for="nomePet">Nome do Pet</label>
-            <input type="text"  class="form-control form-control-sm mb-2" id="nomePet" readonly>
+            <input type="text" [(ngModel)]="nomeDoPet" name="nomeDoPet" class="form-control form-control-sm mb-2" id="nomePet" readonly>
           </div>
 
           <div class="col-4">
             <label class="fonteLabel" for="exampleInputEmail1">Tipo do Pet</label>
-            <input type="text"  class="form-control form-control-sm mb-2" id="tipoDoPet" readonly>
+            <input type="text" [(ngModel)]="tipoPet" name="tipoDoPet" class="form-control form-control-sm mb-2" id="tipoDoPet" readonly>
           </div>
 
           <div class="col-4">
             <label class="fonteLabel" for="exampleInputEmail1">Raça do Pet</label>
-            <input type="text"  class="form-control form-control-sm mb-2" id="racaPet" readonly>
+            <input type="text" [(ngModel)]="raca" name="raca" class="form-control form-control-sm mb-2" id="racaPet" readonly>
           </div>
 
           <div class="col-4">
             <label class="fonteLabel" for="exampleInputEmail1">Porte do Pet</label>
-            <input type="text"  class="form-control form-control-sm mb-2" id="portePet" readonly>
+            <input type="text" [(ngModel)]="porte" name="porte" class="form-control form-control-sm mb-2" id="portePet" readonly>
           </div>
 
           <div class="col-4">
             <label class="fonteLabel" for="exampleInputEmail1">Data Nasc. Pet</label>
-            <input type="text"  class="form-control form-control-sm mb-2" id="nascimentoPet" readonly>
+            <input type="text" [(ngModel)]="nascPet" name="nascPet"  class="form-control form-control-sm mb-2" id="nascimentoPet" readonly>
           </div>
 
           <div class="col-4">
             <label class="fonteLabel" for="exampleInputEmail1">Castrado</label>
-            <input type="text"  class="form-control form-control-sm mb-2" id="castradoPet" readonly>
+            <input type="text" [(ngModel)]="petCastrado" name="petCastrado" class="form-control form-control-sm mb-2" id="castradoPet" readonly>
           </div>
 
           <div class="col-4">
             <label class="fonteLabel" for="exampleInputEmail1">Sexo do Pet</label>
-            <input type="text"  class="form-control form-control-sm mb-2" id="sexoPet" readonly>
+            <input type="text" [(ngModel)]="sexoPet" name="sexoPet" class="form-control form-control-sm mb-2" id="sexoPet" readonly>
           </div>
 
           <div class="col-4">
             <label class="fonteLabel" for="exampleInputEmail1">Vacinação</label>
-            <input type="text"  class="form-control form-control-sm mb-2" id="vacinacaoPet" readonly>
+            <input type="text" [(ngModel)]="petVacinado" name="petVacinado" class="form-control form-control-sm mb-2" id="vacinacaoPet" readonly>
           </div>
 
           <div class="12">
             <label class="fonteLabel" for="exampleInputEmail1">Rede Social do Pet</label>
-            <input type="text"  class="form-control form-control-sm mb-2" id="redeSocialPet" readonly>
+            <input type="text" [(ngModel)]="redeSocialPet" name="redeSocialPet" class="form-control form-control-sm mb-2" id="redeSocialPet" readonly>
           </div>
 
           <div class="12">
             <label class="fonteLabel" for="exampleInputEmail1">Observação</label>
-            <textarea rows="5"  class="form-control form-control-sm mb-2" id="observacaoCliente" readonly></textarea>
+            <textarea rows="5" [(ngModel)]="observacaoPet" name="observacaoPet" class="form-control form-control-sm mb-2" id="observacaoCliente" readonly></textarea>
           </div>
 
         </div>
