@@ -12,6 +12,7 @@ import { NgForOf } from '@angular/common';
   styleUrls: ['./dados-do-cliente.component.css']
 })
 export class DadosDoClienteComponent implements OnInit {
+  //Inicializando variáveis
   idCliente:String =''
   nomeCliente:String =''
   statusCliente:String =''
