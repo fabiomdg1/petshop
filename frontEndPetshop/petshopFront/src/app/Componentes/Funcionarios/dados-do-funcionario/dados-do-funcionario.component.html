@@ -120,76 +120,79 @@
       <!-- Div Desktop -->
       <div class="desktop">
         <div class="row contorno mt-3">
-          <div class="col-5">
-            <label class="fonteLabel" for="buscaCliente">Nome do Cliente</label>
-            <input type="text" class="form-control form-control-sm mb-2" id="buscaCliente">
-          </div>
           <div class="col-4">
-            <label class="fonteLabel" for="buscaPet">Nome do Pet</label>
-            <input type="text" class="form-control form-control-sm mb-2" id="buscaPet">
+            <label class="fonteLabel" for="buscaFuncionario">Nome do Funcionário</label>
+            <select  class="form-control form-control-sm mb-2">
+              <!-- <select  class="form-control form-control-sm mb-2" [(ngModel)]="funcionarioEscolhido" name="funcionarioEscolhido" (ngModelChange)="buscarNomePet()"> -->
+              <!-- <option *ngFor="let funcionario of menuFuncionario"  [ngValue]="clientes">
+              {{funcionario.nomeFuncionario}}
+              </option> -->
+            </select>
           </div>
-          <div class="col-3">
+
+          <div class="col-2">
             <label class="fonteLabel" for="botaoBuscar"></label>
-            <button type="button" class="form-control btn-sm mb-2 btn-primary" id="buscarCep">Buscar</button>
+            <button type="button" class="form-control btn-sm mb-2 btn-primary" id="botaoBuscar">Buscar</button>
+            <!-- <button type="button" class="form-control btn-sm mb-2 btn-primary" id="botaoBuscar" (click)="buscarUmCliente()">Buscar</button> -->
           </div>
+
         </div>
 
         <div class="row contorno mt-3">
-
           <div class="row">
 
             <div class="col-6">
               <div class="row">
               <div class="col-8">
-                <label class="fonteLabel" for="nomeCliente">Nome do Cliente</label>
-                <input type="text" class="form-control form-control-sm mb-2" id="nomeCliente" readonly>
+                <label class="fonteLabel" for="nomeFuncionario">Nome do Funcionário</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="nomeFuncionario">
               </div>
 
               <div class="col-4">
-                <label class="fonteLabel" for="telefoneCliente">Telefone</label>
-                <input type="text" class="form-control form-control-sm mb-2" id="telefoneCliente" readonly>
+                <label class="fonteLabel" for="telefoneFuncionario">Telefone</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="telefoneFuncionario">
               </div>
 
               <div class="col-3">
-                <label class="fonteLabel" for="cepCliente">CEP</label>
-                <input type="text" class="form-control form-control-sm mb-2" id="cepCliente" readonly>
+                <label class="fonteLabel" for="cepFuncionario">CEP</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="cepFuncionario">
               </div>
 
               <div class="col-2">
-                <label class="fonteLabel" for="statusCliente">Estado</label>
-                <input type="text" class="form-control form-control-sm mb-2" id="statusCliente" readonly>
+                <label class="fonteLabel" for="statusFuncionario">Estado</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="statusFuncionario">
               </div>
 
               <div class="col-3">
-                <label class="fonteLabel" for="cidadeCliente">Cidade</label>
-                <input type="text" class="form-control form-control-sm mb-2" id="cidadeCliente" readonly>
+                <label class="fonteLabel" for="cidadeFuncionario">Cidade</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="cidadeFuncionario">
               </div>
 
               <div class="col-4">
-                <label class="fonteLabel" for="bairroCliente">Bairro</label>
-                <input type="text" class="form-control form-control-sm mb-2" id="bairroCliente" readonly>
+                <label class="fonteLabel" for="bairroFuncionario">Bairro</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="bairroFuncionario">
               </div>
 
               <div class="col-8">
-                <label class="fonteLabel" for="enderecoCliente">Endereço</label>
-                <input type="text" class="form-control form-control-sm mb-2" id="enderecoCliente" readonly>
+                <label class="fonteLabel" for="enderecoFuncionario">Endereço</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="enderecoFuncionario">
               </div>
 
               <div class="col-4">
                 <label class="fonteLabel" for="enderecoComplemento">Complemento</label>
-                <input type="text" class="form-control form-control-sm mb-2" id="enderecoComplemento" readonly>
+                <input type="text" class="form-control form-control-sm mb-2" id="enderecoComplemento">
               </div>
 
 
 
               <div class="col-5">
-                <label class="fonteLabel" for="emailCliente">Email</label>
-                <input type="text" class="form-control form-control-sm mb-2" id="emailCliente" readonly>
+                <label class="fonteLabel" for="emailFuncionario">Email</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="emailFuncionario">
               </div>
 
               <div class="col-7">
-                <label class="fonteLabel" for="redeSocialCliente">Rede Social</label>
-                <input type="text" class="form-control form-control-sm mb-2" id="Cliente" readonly>
+                <label class="fonteLabel" for="redeSocialFuncionario">Rede Social</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="redeSocialFuncionario">
               </div>
             </div>
             </div>
@@ -197,23 +200,23 @@
             <div class="col-6">
               <div class="row">
               <div class="col-4">
-                <label class="fonteLabel" for="aniverCliente">Data de Aniversário</label>
-                <input type="date" class="form-control form-control-sm mb-2" id="aniverCliente" readonly>
+                <label class="fonteLabel" for="aniverFuncionario">Data de Aniversário</label>
+                <input type="date" class="form-control form-control-sm mb-2" id="aniverFuncionario">
               </div>
 
               <div class="col-4">
-                <label class="fonteLabel" for="generoCliente">Gênero</label>
-                <input type="text" class="form-control form-control-sm mb-2" id="generoCliente" readonly>
+                <label class="fonteLabel" for="generoFuncionario">Gênero</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="generoFuncionario">
               </div>
 
               <div class="col-4">
-                <label class="fonteLabel" for="statusCliente">Status</label>
-                <input type="text" class="form-control form-control-sm mb-2" id="statusCliente" readonly>
+                <label class="fonteLabel" for="statusFuncionario">Status</label>
+                <input type="text" class="form-control form-control-sm mb-2" id="statusFuncionario">
               </div>
 
               <div class="12">
-                <label class="fonteLabel" for="exampleInputEmail1">Observação</label>
-                <textarea rows="7" class="form-control form-control-sm mb-2" id="observacaoCliente" readonly></textarea>
+                <label class="fonteLabel" for="observacaoFuncionario">Observação</label>
+                <textarea rows="7" class="form-control form-control-sm mb-2" id="observacaoFuncionario"></textarea>
               </div>
             </div>
             </div>
@@ -226,15 +229,15 @@
             <div class="row">
               <div class="col-8">
                 <label class="fonteLabel" for="cargoFuncionario">Cargo</label>
-                <input type="text" class="form-control form-control-sm mb-2" id="cargoFuncinario" readonly>
+                <input type="text" class="form-control form-control-sm mb-2" id="cargoFuncinario">
               </div>
               <div class="col-4">
                 <label class="fonteLabel" for="tipoCargo">Tipo</label>
-                <input type="text" class="form-control form-control-sm mb-2" id="tipoCargo" readonly>
+                <input type="text" class="form-control form-control-sm mb-2" id="tipoCargo">
               </div>
               <div class="12">
                 <label class="fonteLabel" for="descricaoCargo">Descrição do Cargo</label>
-                <textarea rows="2" class="form-control form-control-sm mb-2" id="descricaoCargo" readonly></textarea>
+                <textarea rows="2" class="form-control form-control-sm mb-2" id="descricaoCargo"></textarea>
               </div>
             </div>
           </div>
@@ -242,13 +245,11 @@
             <div class="row">
               <div class="12">
                 <label class="fonteLabel" for="observacaoCargo">Observações sobre o cargo</label>
-                <textarea rows="5" class="form-control form-control-sm mb-2" id="observacaoCargo" readonly></textarea>
+                <textarea rows="5" class="form-control form-control-sm mb-2" id="observacaoCargo"></textarea>
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
 
