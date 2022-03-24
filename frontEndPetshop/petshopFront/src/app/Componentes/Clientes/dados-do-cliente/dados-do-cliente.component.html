@@ -161,7 +161,7 @@
       <div class="desktop">
         <div class="row contorno mt-3">
           <div class="col-4">
-            <label class="fonteLabel" for="buscaCliente">Nome do Cliente</label>
+            <label class="fonteLabel" for="buscaCliente">{{objetoBuscado}}</label>
               <select  class="form-control form-control-sm mb-2" [(ngModel)]="clienteEscolhido" name="clienteEscolhido" (ngModelChange)="buscarNomePet()">
               <option *ngFor="let clientes of menu"  [ngValue]="clientes">
                {{clientes.nomeCliente}}
@@ -170,14 +170,34 @@
           </div>
 
           <div class="col-4">
-            <label class="fonteLabel" for="nomeCliente">Nome do Pet</label>
-            <input [(ngModel)]="nomePet" name="nomePet" type="text" class="form-control form-control-sm mb-2" readonly>
+            <label class="fonteLabel" for="nomeCliente">{{objetoConfirmacao}}</label>
+            <!-- <input [(ngModel)]="nomePet" name="nomePet" type="text" class="form-control form-control-sm mb-2"> -->
+
+
+            <!-- Teste -->
+            <select  class="form-control form-control-sm mb-2" [(ngModel)]="clienteEscolhido" name="clienteEscolhido" (ngModelChange)="buscarNomePet()">
+              <option *ngFor="let clientes of menu"  [ngValue]="clientes">
+               {{clientes.nomePet}}
+              </option>
+            </select>
+            <!-- Teste -->
+
+
+
           </div>
 
-          <div class="col-2">
+          <div class="col-1">
             <label class="fonteLabel" for="botaoBuscar"></label>
             <button type="button" class="form-control btn-sm mb-2 btn-primary" id="botaoBuscar" (click)="buscarUmCliente()">Buscar</button>
           </div>
+
+          <div class="col-1">
+            <label class="fonteLabel" for="botaoCadastrar"></label>
+            <button type="button" class="form-control btn-sm mb-2 btn-info" id="botaoCadastrar" routerLink="/cadastrar-cliente">Cadastrar</button>
+          </div>
+
+
+
         </div>
         <div class="row contorno mt-3">
           <div class="row">

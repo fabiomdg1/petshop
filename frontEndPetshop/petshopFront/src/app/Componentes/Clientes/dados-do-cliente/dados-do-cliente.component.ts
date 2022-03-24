@@ -11,6 +11,12 @@ import { ClienteService } from 'src/app/Servicos/ClienteService';
 })
 export class DadosDoClienteComponent implements OnInit {
   //Inicializando variáveis
+
+  objetoBuscado:String='Nome do Cliente'
+  objetoConfirmacao:String='Nome do Pet'
+  termoDeBusca:String='clientes.nomeCliente'
+
+
   idCliente:String =''
   nomeCliente:String =''
   statusCliente:String =''
@@ -36,6 +42,7 @@ export class DadosDoClienteComponent implements OnInit {
   petVacinado:String =''
   redeSocialPet:String =''
   observacaoPet:String =''
+
   menu:any = []
   dados_cliente:any = []
   id_cliente:any
@@ -92,39 +99,39 @@ export class DadosDoClienteComponent implements OnInit {
   // Busca todos os dados do cliente com base no ID fornecido
   buscarUmCliente(){
 
-    //Esta função é chamada no momento que o usuário clica no campo Nome do Cliente
+    //Esta função é chamada no momento que o usuário clica no botão Buscar
     //Traz todos os dados referentes ao cliente que estão no banco
       this.clienteService.buscarClienteId(this.clienteEscolhido.id).subscribe(resultado=>{
         this.cliente = resultado
 
         resultado.forEach((index:any[]) => {
-            let item: any ={
-                idCliente:'',
-                nomeCliente:'',
-                statusCliente:'',
-                nascCliente:'',
-                observacaoCliente:'',
-                genero:'',
-                telefone:'',
-                email:'',
-                redeSocialCliente:'',
-                estado:'',
-                cidade:'',
-                bairro:'',
-                endereco:'',
-                complemento:'',
-                cep:'',
-                nomePet:'',
-                tipoPet:'',
-                raca:'',
-                porte:'',
-                nascPet:'',
-                petCastrado:'',
-                sexoPet:'',
-                petVacinado:'',
-                redeSocialPet:'',
-                observacaoPet:'',
-                } //fim let item
+            // let item: any ={
+            //     idCliente:'',
+            //     nomeCliente:'',
+            //     statusCliente:'',
+            //     nascCliente:'',
+            //     observacaoCliente:'',
+            //     genero:'',
+            //     telefone:'',
+            //     email:'',
+            //     redeSocialCliente:'',
+            //     estado:'',
+            //     cidade:'',
+            //     bairro:'',
+            //     endereco:'',
+            //     complemento:'',
+            //     cep:'',
+            //     nomePet:'',
+            //     tipoPet:'',
+            //     raca:'',
+            //     porte:'',
+            //     nascPet:'',
+            //     petCastrado:'',
+            //     sexoPet:'',
+            //     petVacinado:'',
+            //     redeSocialPet:'',
+            //     observacaoPet:'',
+            //     } //fim let item
 
                 this.idCliente = index[0]
                 this.nomeCliente = index[1]
@@ -185,4 +192,6 @@ export class DadosDoClienteComponent implements OnInit {
        this.redeSocialPet =''
        this.observacaoPet =''
   }
+
+
 }
